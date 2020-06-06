@@ -115,18 +115,19 @@ function startTimer() {
     };
 
    function checkAnswer(event) {
-   answerCheckDiv.innerHTML = "";
       
       var listItem = "";
       var listItem = document.createElement('div');
       var result;
-  
+
+   
       if (event.target.innerHTML === questions[questionIndex - 1].answer) {
-          result = "Correct";
+          result = "Correct!";
           correctAnswers++;
-          console.log(correctAnswers, "checkanswer");
+          document.getElementById("answerChoice").textContent = result;
       } else {
           result = "Wrong!";
+          document.getElementById("answerChoice").textContent = result;
       }
    }
   
@@ -135,8 +136,8 @@ function startTimer() {
       lastpage.style.display = "block";
       document.getElementById("answerTotal").innerHTML = " " + correctAnswers + " ";
       clearInterval(time);
-  
   }
+
 
 
 
