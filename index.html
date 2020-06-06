@@ -7,30 +7,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div id="highscore"> Highscore </div>
-        <div id="time"> Time left : </div> 
+
+    <header class="navbar">
+        <div class="row">
+            <div class="col-sm-3">
+                <button type="button" id='highscore'>Highscore</button>
+             </div> 
+            <div class="col-sm-6">
+                <h2> Welcome to quiz!</h2>
+            </div>
+            <div class="col-sm-3" id = "time">
+                <p>Time Left: <span id="timerSpan"></span></p>
+            </div>
+        </div>
     </header>
-    
+
     <div class ="welcome" id = "start">
-       <h1> Welcome to Gode Quiz! </h1>
-       <p> This quiz has five questions and you have 75 seconds to answer all the question. To start a quiz please press Start button!</p> 
+       <h1> Are you ready?</h1>
+       <p> This quiz has five questions and you have 1 minut and 15 seconds to answer all the question. To start a quiz please press Start button!</p> 
        <button id = "start-button" > Start </button>
     </div>
    
-    <div class = "container" id = "quiz"  style ="display: none;">
-        <div id ="question"> "question" </div>
-         <div id = "choices">
-            <button id = "btn-a"> A </button>
-            <button id = "btn-b"> B </button>
-            <button id = "btn-c"> C </button>
-         </div>
-        <button id = next-btn>  Next </button>
+    <div class ="container" id = "quiz"  style ="display: none;">
+         <div id ="question"></div>
+         <div id ="choice"></div>
         <hr>
-
-        <div id="result"> "wrong/correct" </div>
+         <p id='answerChoice'></p>
+    </div>
+    
+    <div class = "container" id= "lastpage" style ="display: none;">
+        <p > Wow! You got<span id=answerTotal></span>correct answers!  </p>
+        <form>
+            <label for="fname">Your Initials:</label><br>
+            <input type="text" id="fname" value="Initials"><br><br>
+            <button type="submit" value="Save result"> Save result </button>
+          </form>
+        <button type="button" id="goBackBtn">Go Back</button>
+        <button type="button" id="clearBtn">Clear Highscores</button>
 
     </div>
+
+
+  
 
     <script type="text/javascript" src="script.js"></script>
 </body>
