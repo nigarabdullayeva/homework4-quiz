@@ -1,15 +1,15 @@
 
-
+//create question and answers 
 var questions = [ {
 
    quest: "How select element in CSS with id name?",
    choices: [".name", "#name", "name"],
-   answer: "First"
+   answer: "#name"
 },
 {
    quest: "What is a HTML element for line break?",
-   choices: ["<br>", "<break>", "<lb>"],
-   answer: "<br>"
+   choices: ["br", "break", "lb"],
+   answer: "br"
 },
 {
    quest: "What punctuation is using for NOT statements?",
@@ -40,15 +40,6 @@ questionBtns = document.getElementById("choice");
 
 
 
-
-// addInitialsId = document.getElementById("addInitialsId");
-// highScoresDiv = document.getElementById("highScoreWrapper");
-// scoreWrapper = document.getElementById("scoreWrapper");
-
-// highScoreItemsDiv = document.querySelector(".listOfScores");
-// listOfScoresDiv = document.querySelector(".listOfScores");
-
-
 var highScores = [];
 questionIndex = 0;
 correctAnswers = 0;
@@ -57,7 +48,7 @@ timeElapsed = 0;
 var time;
 
 
-
+// star quiz 
 startBtn.addEventListener("click", function (event) {
    event.preventDefault()
    start.style.display = "none";
@@ -67,7 +58,6 @@ startBtn.addEventListener("click", function (event) {
 });
 
    questionBtns.addEventListener("click", function (event) {
-     // event.stopPropagation();
       checkAnswer(event);
 
       if (questionIndex == questions.length) {
@@ -77,7 +67,7 @@ startBtn.addEventListener("click", function (event) {
       }
       return
    });
-
+//create timer 
 function startTimer() {
    time = setInterval(function () {
        var totalSecondsLeft = timerTotal - timeElapsed;
@@ -108,7 +98,7 @@ function startTimer() {
        timerSpan.innerHTML = formattedMinutes + ":" + formattedSeconds;
    }, 1000) 
 }
-    
+    //making question and answers display 
  function createBtns(event) { 
    questionBtns.innerHTML = "";
     quizDiv.innerHTML = "";
